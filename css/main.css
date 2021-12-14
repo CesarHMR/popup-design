@@ -1,0 +1,121 @@
+#background{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("/images/background.png");
+}
+.hidden{
+    display: none !important;
+}
+#background, #fade{
+    height: 100vh;
+    width: 100vw;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+#fade{
+    background-color: rgba(0, 0, 0, 0.568);
+    z-index: 1;
+}
+
+#popup{
+    height: 350px;
+    width: min(700px,80vw);
+
+    background-color: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    color: white;
+    z-index: 2;
+
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%,50%);
+
+    display: grid;
+    grid-template-rows: 3fr 13fr;
+}
+
+#popup-header{
+    background-color: var(--black);
+
+    font-size: min(2rem, 7vw);
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#popup-section{
+    height: 100%;
+    width: 100%;
+
+    padding: 0 10% 1rem 10%;
+    
+    position: relative;
+    background-color: var(--gray);
+
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+}
+#popup-message{
+    font-size: min(1.7rem, 5.5vw);
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#popup-buttons{
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: row;
+}
+#popup-button{
+    appearance: none;
+    outline: none;
+    border: none;
+    
+    height: 100%;
+    width: 8rem;
+
+    border-radius: 2rem;
+
+    font-size: 1.4rem;
+}
+#popup-button.sec{
+    background-color: var(--gray);
+    cursor: pointer;
+    
+    color: white;
+}
+#popup-button.sec:hover{
+    text-decoration: underline;
+}
+#popup-button.sec:active{
+    color: rgb(221, 221, 221);
+}
+#popup-button.main{
+    background-color: white;
+    border: white .15rem solid;
+    cursor: pointer;
+    
+    color: var(--gray);
+}
+#popup-button.main:hover{
+    border: none;
+    background-image: linear-gradient(180deg,#00B4EF, #009fd4);
+    background-color: white;
+    color:white;
+}
+#popup-button.main:active{
+    background-image: linear-gradient(180deg,#01a6dd, #008fbe);
+    border: none;
+}
