@@ -1,14 +1,16 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /*
 Carrois Gothic
+Montserrat
 */
 
 #popup, #popup *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Carrois Gothic', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -21,6 +23,9 @@ Carrois Gothic
     --gray: rgb(115, 120, 128);
     --blue: #069BE8;
 }
+.close{
+    display: none !important;
+}
 #popup{
     height: 350px;
     width: min(700px,80vw);
@@ -32,23 +37,26 @@ Carrois Gothic
     z-index: 2;
 
     color: white;
-    background-color: rgb(86, 97, 117);
+    background-color: rgb(59, 67, 82);
     border-radius: 1rem;
     filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.699));
 
     display: grid;
     grid-template-rows: 3fr 13fr;
+
+    animation: ;
 }
 /*---Icon---------------------*/
 #error-icon{
     height: 100px;
 
     position: absolute;
-    left: 0;
-    top: 0;
-    transform: translate(-30%,-20%);
+    left: -35px;
+    top: -20px;
 
-    filter: drop-shadow(5px 5px 30px rgba(0, 0, 0, 0.699));
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.349));
+
+    animation: shake 2200ms ease infinite;
 }
 @media (max-width: 600px)
 {
@@ -58,12 +66,13 @@ Carrois Gothic
 }
 /*---Header---------------------*/
 #popup-header{
-    background-color: rgb(33, 55, 88);
+    background-color: #048ec9;
 
     border-radius: 1rem 1rem 0 0;
 
     font-size: min(2rem, 7vw);
-    text-transform: uppercase;
+    font-weight: 600;
+    text-transform: capitalize;
 
     display: flex;
     align-items: center;
@@ -139,4 +148,40 @@ Carrois Gothic
 }
 #popup-button.main:active{
     background-color: rgb(221, 221, 221);
+}
+
+@keyframes shake{
+    0%{
+        transform:rotateZ(0deg);
+    }
+    5%{
+        transform:rotateZ(10deg);
+    }
+    9%{
+        transform:rotateZ(-10deg);
+    }
+    13%{
+        transform:rotateZ(10deg);
+    }
+    17%{
+        transform:rotateZ(-10deg);
+    }
+    21%{
+        transform:rotateZ(10deg);
+    }
+    25%{
+        transform:rotateZ(-10deg);
+    }
+    29%{
+        transform:rotateZ(0deg);
+    }
+}
+
+@keyframe appear{
+    from{
+        transform: translate(50%,40%);
+    }
+    to{
+        transform: translate(50%,50%);
+    }
 }
